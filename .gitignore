@@ -31,3 +31,7 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+
+# Dependency directories
+node_modules/
