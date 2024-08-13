@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { request, gql } from "graphql-request";
 import * as APITypes from "../API";
+import { request, gql } from "graphql-request";
 
-const endpoint = "YOUR_GRAPHQL_ENDPOINT";
+const endpoint =
+  "https://xybc7mrh7nabta6gtjxidpwc2q.appsync-api.ap-south-1.amazonaws.com/graphql";
 
 // Define the types for the state
 interface Student {
@@ -46,7 +47,7 @@ export const createStudent = createAsyncThunk(
         }
       }
     `;
-    const response = await request(endpoint, query, variables);
+    const response: any = await request(endpoint, query, variables);
     return response.createStudent;
   }
 );
@@ -72,7 +73,7 @@ export const updateStudent = createAsyncThunk(
         }
       }
     `;
-    const response = await request(endpoint, query, variables);
+    const response: any = await request(endpoint, query, variables);
     return response.updateStudent;
   }
 );
@@ -95,7 +96,7 @@ export const getStudent = createAsyncThunk(
         }
       }
     `;
-    const response = await request(endpoint, query, variables);
+    const response: any = await request(endpoint, query, variables);
     return response.getStudent;
   }
 );
